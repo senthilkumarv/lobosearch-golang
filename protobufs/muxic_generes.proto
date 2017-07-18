@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.muxic.proto";
+option optimize_for = LITE_RUNTIME;
+option objc_class_prefix = "MUXIC";
+option java_multiple_files = true;
+
+message Genre {
+   string name = 1;
+   int32 rank = 2;
+}
+
+message MuxicResponse {
+   repeated Genre genres = 1;
+}
+
+message ClientId {
+   string apiKey = 1;
+}

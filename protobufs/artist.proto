@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.djlobo.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files = true;
+option objc_class_prefix = "DLA";
+
+message Artist {
+  int32 id = 1;
+  string name = 2;
+  string image = 3;
+  string thumbnail = 4;
+  string player_image = 5;
+  int32 order = 6;
+  string twitter = 7;
+  bool enabled = 8;
+}

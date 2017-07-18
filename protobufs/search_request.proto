@@ -1,0 +1,21 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.djlobo.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files = true;
+option objc_class_prefix = "DLA";
+
+message SearchRequest {
+  int32 offset = 1;
+  int32 count = 2;
+  string query = 3;
+
+  enum SearchType {
+    ARTIST = 0;
+    FILE_NAME = 1;
+    SONG_TITLE = 2;
+    SONG_ID = 3;
+  }
+
+  SearchType type = 4;
+}

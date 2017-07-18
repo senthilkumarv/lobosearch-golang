@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.djlobo.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files = true;
+option objc_class_prefix = "DLA";
+
+message Category {
+  int32 id = 1;
+  string title = 2;
+  int32 order = 3;
+  int32 total_songs = 4;
+  bool enabled = 5;
+}

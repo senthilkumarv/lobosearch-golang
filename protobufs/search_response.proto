@@ -1,0 +1,31 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.djlobo.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files = true;
+option objc_class_prefix = "DLA";
+
+message CoverArt {
+  string small = 1;
+  string medium = 2;
+  string large = 3;
+}
+
+message SongSearchResult {
+  int32 track_id = 9;
+  int32 song_id = 1;
+  string file_name = 2;
+  string song_title = 3;
+  string artist_name = 4;
+  int32 up_votes = 5;
+  int32 down_votes = 6;
+  int64 start_position = 7;
+  CoverArt cover_art = 8;
+}
+
+message SearchResponse {
+  int32 total_results = 1;
+  int32 page_count = 2;
+  int32 offset = 3;
+  repeated SongSearchResult results = 4;
+}

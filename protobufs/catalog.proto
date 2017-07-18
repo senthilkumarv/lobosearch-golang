@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+option java_package = "com.djloboapp.djlobo.proto";
+option optimize_for = LITE_RUNTIME;
+option java_multiple_files = true;
+option objc_class_prefix = "DLA";
+
+import "song.proto";
+import "category.proto";
+import "artist.proto";
+import "promo.proto";
+
+message Catalog {
+  int32 last_updated = 1;
+  repeated Song songs = 2;
+  repeated Category categories = 3;
+  repeated Promo promos = 4;
+  repeated Artist artists = 5;
+}
